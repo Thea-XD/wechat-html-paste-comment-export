@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>公众号 HTML 粘贴 & 留言导出</title>
+<style>
+:root{
+  --w:1175px;
+  --h:500px;
+  --green:#07c160;
+  --green-deep:#105c36;
+  --green-ink:#173d2a;
+  --mint:#e9f8ef;
+  --mint-2:#d8f3e3;
+  --paper:rgba(255,255,255,.78);
+  --line:rgba(16,92,54,.13);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:#cfd8d2;font-family:"MiSans","Source Han Sans SC","HarmonyOS Sans SC","DingTalk JinBuTi","Alibaba PuHuiTi 3.0",sans-serif}
+.canvas{
+  position:relative;
+  width:var(--w);
+  height:var(--h);
+  overflow:hidden;
+  color:var(--green-ink);
+  background:
+    radial-gradient(520px 360px at 92% 12%,rgba(7,193,96,.18),transparent 72%),
+    radial-gradient(440px 320px at 4% 100%,rgba(105,211,151,.17),transparent 72%),
+    linear-gradient(135deg,#fbfffc 0%,var(--mint) 56%,#f5fcf8 100%);
+}
+.grid{
+  position:absolute;
+  inset:0;
+  opacity:.045;
+  background-image:linear-gradient(rgba(16,92,54,.55) 1px,transparent 1px),linear-gradient(90deg,rgba(16,92,54,.55) 1px,transparent 1px);
+  background-size:44px 44px;
+  mask-image:linear-gradient(90deg,#000,transparent 60%);
+}
+.rail{position:absolute;left:0;top:0;width:14px;height:100%;background:var(--green)}
+.content{position:relative;z-index:2;width:100%;display:flex;justify-content:center;padding-top:48px}
+h1{margin:0;color:var(--green-deep);font-size:50px;line-height:1.12;letter-spacing:-.045em;font-weight:800;white-space:nowrap;text-align:center}
+.amp{color:var(--green)}
+.visual{position:absolute;z-index:1;left:280px;top:138px;width:615px;height:350px}
+.halo{position:absolute;inset:18px 6px 4px 40px;border-radius:52% 48% 44% 56%;background:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.86);box-shadow:0 36px 90px rgba(28,104,63,.14);transform:rotate(-5deg)}
+.tool{position:absolute;width:255px;height:255px;padding:16px;background:var(--paper);border:1px solid rgba(255,255,255,.9);border-radius:62px;box-shadow:0 24px 54px rgba(24,93,55,.16);backdrop-filter:blur(16px)}
+.tool img{display:block;width:100%;height:100%;object-fit:cover;border-radius:46px}
+.tool-html{left:18px;top:10px;transform:rotate(-6deg)}
+.tool-comment{right:18px;top:10px;transform:rotate(6deg)}
+.connector{position:absolute;left:268px;top:104px;width:78px;height:78px;display:grid;place-items:center;color:#fff;background:var(--green);border:8px solid #effaf3;border-radius:50%;box-shadow:0 14px 30px rgba(7,193,96,.25);font-size:30px;font-weight:800;z-index:4}
+.dot{position:absolute;border-radius:50%;background:var(--green)}
+.dot-a{right:35px;top:3px;width:12px;height:12px;opacity:.38}
+.dot-b{left:12px;bottom:64px;width:8px;height:8px;opacity:.28}
+</style>
+</head>
+<body>
+<main class="canvas" data-output-type="cover-image" data-width="1175" data-height="500">
+  <div class="grid"></div>
+  <div class="rail"></div>
+  <section class="content">
+    <h1>公众号 HTML 粘贴 <span class="amp">&amp;</span> 留言导出</h1>
+  </section>
+  <section class="visual" aria-label="两个扩展图标">
+    <div class="halo"></div>
+    <div class="tool tool-html"><img src="../../extensions/html-layout-paste/icon-source.png" alt="公众号 HTML 排版粘贴图标"></div>
+    <div class="tool tool-comment"><img src="../../extensions/comment-exporter/icons/icon-source.png" alt="微信文章留言导出图标"></div>
+    <div class="connector">＋</div>
+    <div class="dot dot-a"></div>
+    <div class="dot dot-b"></div>
+  </section>
+</main>
+</body>
+</html>

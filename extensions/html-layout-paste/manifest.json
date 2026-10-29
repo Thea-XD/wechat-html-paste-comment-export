@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "公众号 HTML 排版粘贴",
+  "description": "把 HTML 排版内容粘贴到公众号编辑器，保留样式、图片与链接交互",
+  "version": "1.0.0",
+  "permissions": ["activeTab", "clipboardWrite", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "打开公众号 HTML 排版粘贴",
+    "default_icon": {
+      "16": "icon16.png",
+      "32": "icon32.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["icon32.png"],
+      "matches": ["https://mp.weixin.qq.com/*"]
+    }
+  ]
+}

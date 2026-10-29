@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "minimum_chrome_version": "95",
+  "name": "微信文章留言导出",
+  "version": "1.0.0",
+  "description": "在微信公众号后台文章留言管理页导出全部留言为 CSV。",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_title": "导出微信文章留言",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
+  }
+}
